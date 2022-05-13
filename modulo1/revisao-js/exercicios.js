@@ -3,44 +3,48 @@
 //    -> NÃO MODIFIQUE OS PARÂMETROS DAS FUNÇÕES!!! ()
 
 
-// EXERCÍCIO 01
-function retornaTamanhoArray(array) {
-   let tamanhoDoArray = array.length
-    return tamanhoDoArray
+// EXERCÍCIO 01 - OK
+function retornaTamanhoArray(array){
+//    let tamanhoDoArray = array.length
+
+//     return tamanhoDoArray
 }
 
-// EXERCÍCIO 02
+// EXERCÍCIO 02 - OK
 function retornaArrayInvertido(array) {
-   let arrayInvertido = array.length
-    return arrayInvertido
+//    let arrayInvertido = array.reverse()
+
+//     return arrayInvertido
 }
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  let arrayOrdenado = array.sort();
-    return arrayOrdenado
+//   let arrayOrdenado = array.sort((a,b)=> a - b)
+//     return arrayOrdenado
+}
 
-// EXERCÍCIO 04
+// EXERCÍCIO 04 - OK
 function retornaNumerosPares(array) {
-   let numerosPares = array.filter((num)=> {
-       return num % 2 === true
-   })
+//    let numerosPares = array.filter(pares => (pares % 2) == 0)
+//        return numerosPares
 }
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-    let numerosPares2 = array.filter((num2)=> {
-        return num2 % 2 === true
-    }).map((num)=>{
-        return {...num2, numerosPares2 ** 2}
-    })
+    // let numerosPares = array.filter(pares => (pares % 2) == 0)   
+    //     for (let i of numerosPares){
+    //         let numerosParesElevados = []
+    //         numerosParesElevados.push([i]**2)
+
+    //         return numerosParesElevados
+    // }
 }
 
-// EXERCÍCIO 06
+// EXERCÍCIO 06 - OK
 function retornaMaiorNumero(array) {
-  let maiorValor = math.max(...array)
+//   let maiorValor = Math.max(...array)
 
-  return maiorValor
+//   return maiorValor
 }
 
 // EXERCÍCIO 07
@@ -53,9 +57,15 @@ function retornaNPrimeirosPares(n) {
    
 }
 
-// EXERCÍCIO 09
+// EXERCÍCIO 09 - AINDA NAO FUNCIONA
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+    // if (ladoA === ladoB === ladoC){
+    //     return 'Equilátero'
+    // }else if (ladoA !== ladoB !== ladoC){
+    //     return 'Escaleno'
+    // }else{
+    //     return 'Isóceles'
+    // }
 }
 
 // EXERCÍCIO 10
@@ -73,9 +83,12 @@ function retornaPessoaAnonimizada(pessoa) {
    
 }
 
-// EXERCÍCIO 13A
+// EXERCÍCIO 13A - OK
 function retornaPessoasAutorizadas(pessoas) {
-   
+//    return pessoas.filter(pessoa =>{
+//        return (pessoa.idade <= 60 && pessoa.idade > 14 && pessoa.altura >= 1.5)
+
+//    })
 }
 
 // EXERCÍCIO 13B
