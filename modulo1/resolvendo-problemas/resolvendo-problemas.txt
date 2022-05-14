@@ -1,0 +1,13 @@
+Passo 1 - Ter atenção no enunciado: Acredito que esse seria o principal passo, pois, se nao entender o enunciado ou retirar informações de forma incorreta independente dos passos seguintes o exercicio nao sera resolvido da forma correta.
+
+Passo 2- Retirar informações relevantes: aqui começa realmente o codigo, a logica do exercio, onde vai ser montado a ideia do que o exercicio esta pedindo e filtrar o que for importante.
+
+Passo 3 - Pensar entradas e saidas: Nesse passo ja começamos a tentar montar um esboço com o que o exercicio esta nos disponibilizando.
+
+Passo 4 - Fazer um esquema visual: Criar algum fluxograma ou passos que o codigo tera que percorrer ate chegar no objetivo final.
+
+Passo 5: Criar cogido feio: Aqui começa a mao na massa, tentar passar todas as informações que foram coletadas nos passos anteriores para o codigo, sem se preocupar com boas praticas ou com clean code.
+
+Passo 6: Testar força-bruta: Fazer varios testes com o codigo montado, testado por etapas para ir encontrando eventuais erros que possam aparecer.
+
+Passo 7: Agora começa as boas praticas, deixar o codigo de uma forma que qualquer dev consiga ler as informações e saiba qual é o objetivo que eu quis chegar. Se possivel mudar a forma com que o codigo foi desenvolvido, utlizando outros metodos de escrita, mas, o mais importante de ter um codigo que ocupe menos linhas é ter um codigo que funcione, então, se o codigo esta legivel e funcionando é so comemorar. :D
