@@ -1,0 +1,28 @@
+img{
+    height: 40px;
+    width: 40px;
+}
+
+.cabecalho{
+    padding-left: 150px;
+    background-color: rgb(127, 193, 255);
+    font-weight: bold
+}
+
+.controle-estoque{
+    background-color: rgb(156, 153, 161);
+    padding-left: 100px;
+}
+
+td{
+    background-color: rgb(211, 216, 216);
+    font-weight: 500;
+}
+
+th{
+    background-color: rgb(175, 240, 248);
+}
+
+td{
+    text-align: center;
+}
