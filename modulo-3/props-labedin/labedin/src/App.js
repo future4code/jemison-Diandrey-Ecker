@@ -23,7 +23,7 @@ function App() {
 
       <div>
           <CardPequeno
-            imagem='https://cdn-icons.flaticon.com/png/512/3178/premium/3178158.png?token=exp=1656036979~hmac=0f83ee779f1e8e4d7d76b8c4dd983753'
+            imagem='https://cdn-icons.flaticon.com/png/512/3178/premium/3178158.png?token=exp=1656113112~hmac=fc7baa0797d28f268a66d7065443d396'
             email='E-mail: diandreyecker@hotmail.com'
           />
           <CardPequeno
