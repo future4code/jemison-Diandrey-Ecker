@@ -9,7 +9,6 @@ const AdminHomePage = () => {
       <button onClick={() => navigate(-1)}>Area do Administrador</button>
       <button onClick={() => navigate('/create')}>Criar Viagem</button>
       <button onClick={() => navigate('/login')}> Logout </button>
-
     </div>
   )
 }

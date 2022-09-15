@@ -7,23 +7,26 @@ import ListTripsPage from './pages/ListTripsPage';
 import LoginPage from './pages/LoginPage';
 import TripDetailsPage from './pages/TripDetailsPage';
 import { GlobalStyle } from './GlobalStyle';
+import background from './image/image_backgroud.jpg'
 
 function App() {
   return (
-    <div className='App'>
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/admin" element={<AdminHomePage />} />
-          <Route path="/application" element={<ApplicationFormPage />} />
-          <Route path="/create" element={<CreateTripPage />} />
-          <Route path="/list" element={<ListTripsPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/trips" element={<TripDetailsPage />} />
-        </Routes>
-      </Router>
-      <GlobalStyle />
-    </div>
+    <body className='backImg' style={{ backgroundImage: `url(${background})` }}>
+      <div className='App'>
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/admin" element={<AdminHomePage />} />
+            <Route path="/application" element={<ApplicationFormPage />} />
+            <Route path="/create" element={<CreateTripPage />} />
+            <Route path="/list" element={<ListTripsPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/trips" element={<TripDetailsPage />} />
+          </Routes>
+        </Router>
+        <GlobalStyle />
+      </div>
+    </body>
   );
 }
 
