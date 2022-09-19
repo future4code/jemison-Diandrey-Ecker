@@ -2,8 +2,11 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRequestData } from '../hook/useRequestData';
 import { BASE_URL } from '../constants/constants';
+import useProtectedPage from './../hook/useProtectedPage';
 
 const ListTripsPage = () => {
+  useProtectedPage()
+  
   const navigate = useNavigate();
 
   const [data, isLoadingTrips, errorTrips] = useRequestData(`${BASE_URL}trips`)
