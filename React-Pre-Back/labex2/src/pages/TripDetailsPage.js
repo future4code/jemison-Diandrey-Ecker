@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useEffect } from 'react'
 import { BASE_URL } from '../constants/constants'
 import useProtectedPage from '../hook/useProtectedPage'
+import { BackgroundContainer, FormContainer } from '../GlobalStyle'
 
 const TripDetailsPage = () => {
 
@@ -24,9 +25,11 @@ const TripDetailsPage = () => {
   }, [])
 
   return (
-    <div>
-
-    </div>
+    <BackgroundContainer>
+      <FormContainer>
+          <h1>Trip Details Page</h1>
+      </FormContainer>
+    </BackgroundContainer>
   )
 }
 

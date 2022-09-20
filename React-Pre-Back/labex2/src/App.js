@@ -1,16 +1,19 @@
 import React from 'react'
 import { GlobalStyle } from './GlobalStyle';
-import background from './image/image_backgroud.jpg'
 import Router from './router/Router';
+import { ChakraProvider } from '@chakra-ui/react'
+import { theme } from './styles/Theme'
 
 function App() {
 
   return (
 
-  <body className='backImg' style={{ backgroundImage: `url(${background})` }}>
+    <body>
       <div>
-        <Router />
-        <GlobalStyle />
+        <ChakraProvider theme={theme}>
+          <Router />
+          <GlobalStyle />
+        </ChakraProvider>
       </div>
     </body>
 

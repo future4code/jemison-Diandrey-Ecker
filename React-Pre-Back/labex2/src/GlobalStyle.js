@@ -1,12 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
+import background from './image/image_backgroud.jpg'
+import styled from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-    :root {
-        --black: #0000
-        --soft-white: #f2f2f2;
-        --green: #8bcf21;
-        --yellow: #Ffcb16;
-    }
 
     * {
         margin: 0;
@@ -14,43 +10,43 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: Helvetica, sans-serif;
     }
+`
 
-    body {
-        height: 100vh;
+export const BackgroundContainer = styled.div`
         width: 100vw;
-    }
-
-    input, label {
-        display: block;
-        width: 100%;
-    }
-
-    .backImg {
+        height: 100vh;
+        background-image: url(${background});
         background-size: cover;
-        /* opacity: 0.5; */
-    }
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+`
 
-    //form
-
-    .main-container {
-        padding-top: 5vh;
-        width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: white;
+export const FormContainer = styled.div`
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 50vw;
+        height: 50vh;
+        background-color: #C0C0C0;
         border-radius: 10px;
-        padding: 25px;
-    }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-    .main-container h1 {
-        text-align: center;
-        margin-bottom: 25px;
-        font-size: 1.6rem;
-    }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
 
-    input {
-        padding: 5px;
-        border-radius: 8px;
-        margin-bottom: 30px;
-    }
+        Input {
+
+        }
+
+        label {
+            width: 100%;
+            font-size: 1,3rem;
+            border-radius: 8px;
+        }
 `
