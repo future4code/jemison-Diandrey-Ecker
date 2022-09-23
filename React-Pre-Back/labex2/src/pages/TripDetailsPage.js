@@ -1,11 +1,12 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
-import { BASE_URL } from '../constants/constants'
-import useProtectedPage from '../hook/useProtectedPage'
+import { BASE_URL } from '../constants/Constants'
+import { useProtectedPage } from '../hook/useProtectedPage'
 import { BackgroundContainer, FormContainer } from '../GlobalStyle'
+// import { Cordinator } from '../router/Cordinator';
 
-const TripDetailsPage = () => {
+export const TripDetailsPage = () => {
 
   useProtectedPage()
 
@@ -32,5 +33,3 @@ const TripDetailsPage = () => {
     </BackgroundContainer>
   )
 }
-
-export default TripDetailsPage;

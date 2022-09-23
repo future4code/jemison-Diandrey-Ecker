@@ -1,10 +1,10 @@
 import React from 'react'
 import { GlobalStyle } from './GlobalStyle';
-import Router from './router/Router';
+import { Router } from './router/Router';
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from './styles/Theme'
 
-function App() {
+export const App = () => {
 
   return (
 
@@ -19,5 +19,3 @@ function App() {
 
   );
 }
-
-export default App;

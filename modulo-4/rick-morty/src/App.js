@@ -1,12 +1,13 @@
 import { GlobalStyle } from './GlobalStyle';
 // import { DetailsPage } from './pages/DetailsPage';
-import { HomePage } from './pages/HomePage';
+import { HomePage } from './pages/HomePage/HomePage';
+import { results }  from './Data/data'
 
 function App() {
   return (
     <div>
       <GlobalStyle />
-      <HomePage />
+      <HomePage results={results}/>
       {/* <DetailsPage /> */}
     </div>
   );

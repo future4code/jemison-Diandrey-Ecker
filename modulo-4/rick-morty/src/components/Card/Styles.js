@@ -1,9 +1,17 @@
 import styled from 'styled-components'
 
-export const HeaderContainer = styled.header`
-    background: var(--deep-blue-secondary);
-    height: 100px;
+export const CardContainer = styled.div`
+    background-color: var(--soft-white);
+    padding: 10px;
+    margin: 5px;
     text-align: center;
-    font-size: 24px;
-    line-height: 100px;
+    color: var(--dark);
+
+    img {
+        max-width: 200px;
+    }
+
+    h2 {
+        color: var(--deepblue)
+    }
 `

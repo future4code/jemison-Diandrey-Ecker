@@ -1,10 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import useProtectedPage from '../hook/useProtectedPage';
+import { useProtectedPage } from '../hook/useProtectedPage';
 import { Button } from '@chakra-ui/react'
 import { BackgroundContainer, FormContainer } from '../GlobalStyle';
+// import { Cordinator } from '../router/Cordinator';
 
-const CreateTripPage = () => {
+export const CreateTripPage = () => {
     useProtectedPage()
 
   const navigate = useNavigate();
@@ -19,5 +20,3 @@ const CreateTripPage = () => {
     </BackgroundContainer>
   )
 }
-
-export default CreateTripPage
