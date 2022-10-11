@@ -1,0 +1,14 @@
+{
+  "name": "exercicio2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./index.js",
+    "operacoes": "node ./exercicio2.js"
+  },
+  "keywords": [],
+  "author": "Diandrey Ecker",
+  "license": "ISC"
+}
