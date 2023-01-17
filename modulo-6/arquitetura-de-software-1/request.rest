@@ -1,0 +1,19 @@
+
+POST http://localhost:3003/createuser
+Content-Type: application/json
+
+{
+	"name": "Michael",
+	"email": "michael@dundermilin.com",
+	"password": "thebossss"	
+}
+
+###
+
+GET http://localhost:3003/all
+Content-Type: application/json
+
+###
+
+DELETE  http://localhost:3003/:id
+Content-Type: application/json
