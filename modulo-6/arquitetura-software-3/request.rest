@@ -1,0 +1,30 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "teste4",
+    "email": "email4@email.com",
+    "password": "2343324535"
+}
+
+###
+
+GET http://localhost:3003/user/getAll
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "Homem de Ferro2",
+    "description": "descrição do filme2",
+    "duration_in_minutes": 200,
+    "year_of_release": 2009
+}
+
+###
+
+GET http://localhost:3003/movie/getall
+Content-Type: application/json
