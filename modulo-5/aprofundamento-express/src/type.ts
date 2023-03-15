@@ -1,7 +1,6 @@
-
-// EXERCICIO 2
-export type Produto = {
-    id: string;
-    name: string;
-    price: number;
+export type afazeres = {
+    userId: number,
+    id: number,
+    title: string,
+    completed: boolean
 }
