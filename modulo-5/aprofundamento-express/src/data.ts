@@ -1,21 +1,52 @@
+import { afazeres } from "./type";
 
-// EXERCICIO 3
-import * as tipo from "./type"
-
-export const produtos: tipo.Produto[] = [
+export const toDo: afazeres[] = [
     {
-        id: Date.now().toString(),
-        name: "Celular",
-        price: 1050.00,
+        userId: 1,
+        id: 1,
+        title: "delectus aut autem",
+        completed: false
     },
     {
-        id: Date.now().toString(),
-        name: "Notebook",
-        price: 3150.00,
+        userId: 1,
+        id: 2,
+        title: "quis ut nam facilis et officia qui",
+        completed: false
     },
     {
-        id: Date.now().toString(),
-        name: "Monitor",
-        price: 870.00,
+        userId: 1,
+        id: 3,
+        title: "fugiat veniam minus",
+        completed: true
+    },
+    {
+        userId: 1,
+        id: 4,
+        title: "et porro tempora",
+        completed: true
+    },
+    {
+        userId: 1,
+        id: 5,
+        title: "laboriosam mollitia et enim quasi adipisci quia provident illum",
+        completed: false
+    },
+    {
+        userId: 1,
+        id: 6,
+        title: "qui ullam ratione quibusdam voluptatem quia omnis",
+        completed: false
+    },
+    {
+        userId: 1,
+        id: 7,
+        title: "illo expedita consequatur quia in",
+        completed: false
+    },
+    {
+        userId: 1,
+        id: 8,
+        title: "quo adipisci enim quam ut ab",
+        completed: true
     }
 ]
