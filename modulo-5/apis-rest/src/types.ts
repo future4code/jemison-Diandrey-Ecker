@@ -1,3 +1,7 @@
+export enum USER_TYPE {
+    ADMIN = "ADMIN",
+    NORMAL = "NORMAL"
+}
 
 export type User = {
     id: number,
@@ -5,9 +9,4 @@ export type User = {
     email: string,
     type: string,
     age: number
-}
-
-export enum UserType {
-    ADMIN = "ADMIN",
-    NORMAL = "NORMAL"
 }

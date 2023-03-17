@@ -1,6 +1,6 @@
-import * as tipo from "./types"
+import { User } from "./types";
 
-export let users: tipo.User[] = [
+export let users: User[] = [
     {
         id: 1,
         name: "Alice",
