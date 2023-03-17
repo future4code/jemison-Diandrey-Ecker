@@ -1,24 +1,19 @@
+### EXERCICIO 1
 GET http://localhost:3003/users
+
+### EXERCICIO 2
+GET http://localhost:3003/users/type
+
+### EXERCICIO 3
+GET http://localhost:3003/user
+
+### EXERCICIO 4
+POST http://localhost:3003/user/createuser
 Content-Type: application/json
 
-###
-
-GET http://localhost:3003/user?name=Alice
-Content-Type: application/json
-
-###
-
-GET http://localhost:3003/user/:type
-Content-Type: application/json
-
-###
-
-POST http://localhost:3003/users/create
-Content-Type: application/json
-
-    {
+{
         "userName": "Diandrey",
         "userEmail": "diandrey@email.com",
-        "userType":"ADMIN",
-        "userAge": 32
-    }
+        "userType":"normal",
+        "userAge": 33
+}

@@ -1,103 +1,121 @@
-import express, { Request, Response } from "express"
+import express, { Request, Response } from 'express'
 import cors from 'cors'
-import { users } from "./data"
-import { User } from "./types"
+import { users } from './data';
+import { User } from './types';
+
+
+//------- CONFIG. INICIAIS EXPRESS ----------
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-// EXERCICIO 1 - OK
+//------- PERGUNTAS TEORICAS ----------
+
+// 1.A - Neste caso o metodo que deve ser utilizado é o GET.
+// 1.B - /users
+
+//2.A - Foi passado via query parameters, porque, é o mais recomendado para realizar consulta.
+//2.B - Foram feitos algumas condiçoes para que isso aconteça.
+
+//3.A - Utilizei via query parameters.
+//3.B - Esta comentado no codigo
+
+//4.A - Nada mudou
+//4.B - Mesmo o resultado sendo o mesmo o mais recomendado para esta situaçao seria metodo POST, 
+//para facilitar a leitura do codigo por outro pessoa, fincando mais claro qual a funcao do endpoint.
+
+
+//---------------- EXERCICIO 1 ------------------------
 app.get("/users", (req: Request, res: Response) => {
-    const usersList = users.map((user) => {
-        return user
-    })
-    res.status(200).send(usersList)
+    res.status(200).send(users)
 })
 
-// a. Qual método HTTP você deve utilizar para isso?
-// Como era necessario pegar informaçoes da aplicação foi utilizado o metodo GET.
+//---------------- EXERCICIO 2 ------------------------
+app.get("/users/type", (req: Request, res: Response) => {
 
-// b. Como você indicaria a entidade que está sendo manipulada?
-// Resposta: 
-
-//---------------//---------------//-----------------
-
-// EXERCICIO 2
-app.get("/user/:type", (req: Request, res: Response) => {
-    let errorCode = 422;
+    let errorCode = 400
 
     try {
-        const userType = req.params.type as string
-        const userSearchedByType = users.filter((user) => {
-            return user.type.toUpperCase() === userType.toUpperCase()
-        })
-        if (!userSearchedByType) { //ESTE ERRO NAO ESTA RETORNANDO CORRETAMENTE
-            errorCode = 404;
-            throw new Error("Tipo invalido utilizar apenas ADMIN ou NORMAL");
-        }
-        res.status(200).send(userSearchedByType)
 
-    } catch (error: any) {
-        res.status(errorCode).send(error.message)
-    }
-})
+        const userType = req.query.type as string
 
-//---------------//---------------//-----------------
-
-//EXERCICIO 3 - OK
-app.get("/user", (req: Request, res: Response) => {
-    let errorCode = 400;
-
-    try {
-        const userName = req.query.name as string
-        if (!userName) {
-            errorCode = 401
-            throw new Error("Falta passar o nome como parametro");
-        }
-        const userSeached = users.filter((user) => {
-            return user.name.toLowerCase() === userName.toLowerCase()
-        })
-
-        // b. Altere este endpoint para que ele devolva uma mensagem de erro caso nenhum usuário tenha sido encontrado.
-        if (!userSeached) { //ESTE ERRO NAO ESTA RETORNANDO CORRETAMENTE
-            errorCode = 404;
-            throw new Error("Usuario não encontrado");
-        }
-        res.status(200).send(userSeached)
-
-    } catch (error: any) {
-        res.status(errorCode).send(error.message)
-    }
-})
-
-// a. Qual é o tipo de envio de parâmetro que costuma ser utilizado por aqui?
-// Foi utilizado o parametro QUERY, pois, é o tipo mais utilizado para fazer filtros na aplicação, e aceita um ou mais parametros na URL.
-
-//---------------//---------------//-----------------
-
-// EXERCICIO 4
-app.post("/users/create", (req: Request, res: Response) => {
-    let errorCode = 400;
-
-    try {
-        const { userName, userEmail, userType, userAge } = req.body
-        if (!userName || !userEmail || !userType || !userAge) {
-            errorCode = 400;
-            throw new Error("Favor passar parametros, nome, email, tipo, idade");
+        if (!userType) {
+            errorCode = 422
+            throw new Error("Informe o tipo de usuario");
         }
         if (userType.toUpperCase() !== "ADMIN" && userType.toUpperCase() !== "NORMAL") {
-            errorCode = 400;
-            throw new Error("Tipo de usuario invalido, utlizar apenas os tipos ADMIN ou NORMAL");
+            errorCode = 402
+            throw new Error("Insira um tipo de usuario valido");
+        }
+        const userTypeFiltered = users.filter((user) => {
+            return user.type.toUpperCase() === userType.toUpperCase()
+        })
+
+        res.status(200).send(userTypeFiltered)
+
+    } catch (error: any) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+//---------------- EXERCICIO 3 ------------------------
+
+app.get("/user", (req: Request, res: Response) => {
+
+    let errorCode = 400
+
+    try {
+
+        const userName = req.query.userName as string
+
+        if (!userName) {
+            errorCode = 422
+            throw new Error("Favor informar o nome do usuario");
+        }
+        const userSearched = users.find((user) => {
+            return user.name.toLowerCase() === userName.toLowerCase()
+        })
+        //---------------- EXERCICIO 3.B ---------------------------------------------------------
+        if (!userSearched) {
+            errorCode = 404
+            throw new Error("Usuario não encontrado");
+        }
+        //----------------------------------------------------------------------------------------
+
+        res.status(200).send(userSearched)
+
+    } catch (error: any) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+//---------------- EXERCICIO 4 ------------------------
+app.post("/user/createuser", (req: Request, res: Response) => {
+
+    let errorCode = 400
+
+    try {
+
+        const { userName, userEmail, userType, userAge } = req.body
+
+        if (!userName || !userEmail || !userType || !userAge) {
+            errorCode = 422
+            throw new Error("Favor passar todos os paramentros");
+        }
+        if (userType.toUpperCase() !== "ADMIN" && userType.toUpperCase() !== "NORMAL") {
+            errorCode = 402
+            throw new Error("Tipo de usuario invalido");
         }
         const newUser: User = {
-            id: Math.random(),
+            id: Date.now(),
             name: userName,
             email: userEmail,
-            type: userType,
+            type: userType.toUpperCase(),
             age: userAge
         }
         users.push(newUser)
+
         res.status(201).send(users)
 
     } catch (error: any) {
@@ -105,20 +123,8 @@ app.post("/users/create", (req: Request, res: Response) => {
     }
 })
 
-// a. Mude o método do endpoint para PUT. O que mudou?
-// Resposta: Não ocorreu nenhuma mudança.
-
-// b. Você considera o método PUT apropriado para esta transação? Por quê?
-// Resposta: Depende, essencialmente eles funcionam de formas parecidads, o PUT normalmente é utilizado para atualizar algo, 
-// enquanto, o POST é utilizado para criar algo.
-// Entao, na minha visao eu poderia utilizar os dois metodos nesse caso, porquê, analizando a situação eu poderia
-// pensar da seguinte forma:
-// Estou criando um usuario novo entao poderia utilizar o POST, mas, poderia ser uma atualização do banco de dados,
-// ai nesse caso poderia utilizar o PUT. (NAO SEI SE A MINHA ANALISE FEZ SENTIDO).
-
-
-
 //------- CONFIG. INICIAIS EXPRESS PORTA ----------
+
 app.listen(3003, () => {
-    console.log("Server is running in http://localhost:3003");
-});
+    console.log('Servidor rodando na porta 3003')
+})
