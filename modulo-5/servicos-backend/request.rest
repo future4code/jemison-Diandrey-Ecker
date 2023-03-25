@@ -1,0 +1,22 @@
+GET https://viacep.com.br/ws/05424150/json
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/test
+Content-Type: application/json
+
+{
+    "cep": "85485000"
+}
+
+###
+POST http://localhost:3003/users/create
+Content-Type: application/json
+
+{
+    "name": "Wolf",
+    "nickname": "Mogli",
+    "email": "lonnie.schulist60@ethereal.email",
+    "zipcode": "85485000"
+}
