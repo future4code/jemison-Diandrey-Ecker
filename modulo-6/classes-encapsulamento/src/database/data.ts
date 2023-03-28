@@ -1,12 +1,8 @@
-import { Product } from "../models/Product";
-import { PurchaseDB } from "../models/Purchase";
-import { User } from "../models/User";
+import { Product_data } from "../models/Product";
+import { PurchaseDB_data } from "../models/Purchase";
+import { User_data } from "../models/User";
 
-// export let user1 = new User ('101', "astrodev@gmail.com", "bananinha")
-// export let user2 = new User ("102", "fulano@gmail.com", "qwerty00")
-// export let user3 = new User ("103", "ciclana@gmail.com", "asdfg123")
-
-export const users: User[] = [
+export const users: User_data[] = [
     {
         id: "101",
         email: "astrodev@gmail.com",
@@ -24,7 +20,7 @@ export const users: User[] = [
     }
 ]
 
-export const products: Product[] = [
+export const products: Product_data[] = [
     {
         id: "201",
         name: "Webcam",
@@ -52,7 +48,7 @@ export const products: Product[] = [
     }
 ]
 
-export const purchases: PurchaseDB[] = [
+export const purchases: PurchaseDB_data[] = [
     {
         id: "301",
         user_id: "101",
