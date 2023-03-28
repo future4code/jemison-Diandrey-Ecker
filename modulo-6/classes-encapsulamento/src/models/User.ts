@@ -1,12 +1,5 @@
-export class User {
-    id: string
-    email: string
+export type User_data = {
+    id: string,
+    email: string,
     password: string
-
-    constructor(id: string, email: string, password: string) {
-        this.id = id
-        this.email = email
-        this.password = password
-    }
 }
-
