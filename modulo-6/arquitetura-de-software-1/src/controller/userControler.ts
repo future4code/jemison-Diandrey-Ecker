@@ -25,9 +25,9 @@ export class UserControler {
 
         try {
             const users = new UserBusiness()
-            await users.getAllUsers()
+            const result = await users.getAllUsers()
 
-            res.send(users).status(200);
+            res.send(result).status(200);
 
         } catch (error: any) {
             res.send({ message: error.message }).status(error.status);
