@@ -20,15 +20,9 @@ export class UserDatabase extends BaseDatabase {
     getAllUsers = async (): Promise<user[]> => {
         try {
 
-            const users: user[] = []
-
             const result = await UserDatabase.connection.select("*").from("User_Arq");
 
-            for (let user of result) {
-                users.push(user)
-            }
-
-            return users
+            return result
 
         } catch (error: any) {
             throw new Error(error.sqlMessage || error.message);
